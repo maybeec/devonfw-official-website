@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.devonfw</groupId>
+  <artifactId>devonfw-website</artifactId>
+  <version>dev-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>com.devonfw.tools</groupId>
+    <artifactId>devon-docgen</artifactId>
+    <version>4.0.0</version>
+  </parent>
+
+  <properties>
+    <docgen.wiki.page>master</docgen.wiki.page>
+  </properties>
+
+  <modules>
+    <module>search-engine</module>
+  </modules>
+
+  <!-- never deploy any poms -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
